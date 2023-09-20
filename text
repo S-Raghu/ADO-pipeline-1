@@ -1,22 +1,25 @@
 # # Packages Requried for Azure DevOps Agent:
-# # - apt install -y unzip jq net-tools
-# # - apt update
-# # - apt install -y openjdk-11-jdk
-# # - apt install -y maven
+# apt install -y unzip jq net-tools
+# apt update
+# apt install -y openjdk-11-jdk
+# apt install -y maven
 # cd /usr/local/bin/
 
-# # - wget https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip
+# # Install Terraform
+# wget https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip
 #    rm -rf 
-# # - wget https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
+# # Install packer
+# wget https://releases.hashicorp.com/packer/1.9.4/packer_1.9.4_linux_amd64.zip
 #    rm -rf
 #    cd
-# # - curl https://get.docker.com | bash  (docker install)
-# # - usermod -a -G docker ubuntu
-# # - curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash  (install azure cli)
+#  curl https://get.docker.com | bash  (docker install)
+#  usermod -a -G docker ubuntu
+# # azure cii install
+#  curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash  (install azure cli)
 # # aws cli install
-#     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-#     unzip awscliv2.zip
-#     sudo ./aws/install
+#  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+#  unzip awscliv2.zip
+#  sudo ./aws/install
 
 # # - Ansible, create configfile, disable host_key_checking
 #  sudo apt update
@@ -27,16 +30,20 @@
 #  cd /etc/ansible
 #  cat ansible.cfg
 #  mv ansible.cfg ansible.cfg_old
+#  ansible-config init --disabled > ansible.cfg
+#  nano ansible.cfg
+#   (give host_key_checking as False)
 
 # # - trivy # 
+# cd
 # wget https://github.com/aquasecurity/trivy/releases/download/v0.45.0/trivy_0.45.0_Linux-64bit.deb
 # # unpack
 # dpkg -i trivy_0.45.0_Linux-64bit.deb
 # trivy --version
 
 # # Run config.sh first and provide PAT token and then run svc.sh as given below.
-# # sudo ./svc.sh install ubuntu  #Adds systemd service
-# # sudo ./svc.sh start
+# sudo ./svc.sh install ubuntu  #Adds systemd service
+# sudo ./svc.sh start
 
 
 # # sudo systemd-resolve --flush-caches
